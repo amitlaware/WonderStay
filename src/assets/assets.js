@@ -21,6 +21,11 @@ import twitterIcon from './twitterIcon.svg'
 import instagramIcon from './instagramIcon.svg'
 import linkedinIcon from './linkedinIcon.svg'
 import facebookIcon from './facebookIcon.svg'
+import roomServiceIcon from "./roomServiceIcon.svg"
+import mountainIcon from "./mountainIcon.svg"
+import poolIcon from "./poolIcon.svg"
+import freeWifiIcon from "./freeWifiIcon.svg"
+import freeBreakfastIcon from "./freeBreakfastIcon.svg"
 
 
 
@@ -42,7 +47,11 @@ export const assets = {
     instagramIcon,
     linkedinIcon,
     facebookIcon,
-    
+    freeBreakfastIcon,
+    freeWifiIcon,
+    mountainIcon,
+    roomServiceIcon,
+    poolIcon,
     
 }
 export const cities = [
@@ -154,3 +163,12 @@ export const testimonials = [
     { id: 2, name: "Liam Johnson", address: "New York, USA", image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200", rating: 4, review: "WonderStay exceeded my expectations. The booking process was seamless, and the hotels were absolutely top-notch. Highly recommended!" },
     { id: 3, name: "Sophia Lee", address: "Seoul, South Korea", image: "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=200", rating: 5, review: "Amazing service! I always find the best luxury accommodations through WonderStay. Their recommendations never disappoint!" }
 ];
+
+// Facility Icon
+export const facilityIcons = {
+    "Free WiFi": assets.freeWifiIcon,
+    "Free Breakfast": assets.freeBreakfastIcon,
+    "Room Service": assets.roomServiceIcon,
+    "Mountain View": assets.mountainIcon,
+    "Pool Access": assets.poolIcon,
+};
