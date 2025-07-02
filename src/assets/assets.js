@@ -26,6 +26,13 @@ import mountainIcon from "./mountainIcon.svg"
 import poolIcon from "./poolIcon.svg"
 import freeWifiIcon from "./freeWifiIcon.svg"
 import freeBreakfastIcon from "./freeBreakfastIcon.svg"
+import badgeIcon from "./badgeIcon.svg"
+import locationFilledIcon from "./locationFilledIcon.svg"
+import heartIcon from "./heartIcon.svg"
+import homeIcon from "./homeIcon.svg"
+import ownerImg from "./ownerImg.png"
+import guestsIcon from "./guestsIcon.svg"
+import regImage from "./regImage.png"
 
 
 
@@ -52,7 +59,14 @@ export const assets = {
     mountainIcon,
     roomServiceIcon,
     poolIcon,
-    
+    homeIcon,
+    locationFilledIcon,
+    heartIcon,
+    badgeIcon,
+    ownerImg,
+    guestsIcon,
+    regImage,
+
 }
 export const cities = [
     'Mumbai',
@@ -71,7 +85,7 @@ export const userDummyData = {
     "_id": "user_2unqyL4diJFP1E3pIBnasc7w8hP",
     "username": "WonderStay",
     "email": "user.wonderstay@gmail.com",
-    "image": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvdXBsb2FkZWQvaW1nXzJ2N2c5YVpSSEFVYVUxbmVYZ2JkSVVuWnFzWSJ9",
+    "image": ownerImg,
     "role": "hotelOwner",
     "createdAt": "2025-03-25T09:29:16.367Z",
     "updatedAt": "2025-04-10T06:34:48.719Z",
@@ -172,3 +186,65 @@ export const facilityIcons = {
     "Mountain View": assets.mountainIcon,
     "Pool Access": assets.poolIcon,
 };
+
+// For Room Details Page
+export const roomCommonData = [
+    { icon: assets.homeIcon, title: "Clean & Safe Stay", description: "A well-maintained and hygienic space just for you." },
+    { icon: assets.badgeIcon, title: "Enhanced Cleaning", description: "This host follows Staybnb's strict cleaning standards." },
+    { icon: assets.locationFilledIcon, title: "Excellent Location", description: "90% of guests rated the location 5 stars." },
+    { icon: assets.heartIcon, title: "Smooth Check-In", description: "100% of guests gave check-in a 5-star rating." },
+];
+
+
+
+// User Bookings Dummy Data
+export const userBookingsDummyData = [
+    {
+        "_id": "67f76839994a731e97d3b8ce",
+        "user": userDummyData,
+        "room": roomsDummyData[1],
+        "hotel": hotelDummyData,
+        "checkInDate": "2025-04-30T00:00:00.000Z",
+        "checkOutDate": "2025-05-01T00:00:00.000Z",
+        "totalPrice": 299,
+        "guests": 1,
+        "status": "pending",
+        "paymentMethod": "Stripe",
+        "isPaid": true,
+        "createdAt": "2025-04-10T06:42:01.529Z",
+        "updatedAt": "2025-04-10T06:43:54.520Z",
+        "__v": 0
+    },
+    {
+        "_id": "67f76829994a731e97d3b8c3",
+        "user": userDummyData,
+        "room": roomsDummyData[0],
+        "hotel": hotelDummyData,
+        "checkInDate": "2025-04-27T00:00:00.000Z",
+        "checkOutDate": "2025-04-28T00:00:00.000Z",
+        "totalPrice": 399,
+        "guests": 1,
+        "status": "pending",
+        "paymentMethod": "Pay At Hotel",
+        "isPaid": false,
+        "createdAt": "2025-04-10T06:41:45.873Z",
+        "updatedAt": "2025-04-10T06:41:45.873Z",
+        "__v": 0
+    },
+    {
+        "_id": "67f76810994a731e97d3b8b4",
+        "user": userDummyData,
+        "room": roomsDummyData[3],
+        "hotel": hotelDummyData,
+        "checkInDate": "2025-04-11T00:00:00.000Z",
+        "checkOutDate": "2025-04-12T00:00:00.000Z",
+        "totalPrice": 199,
+        "guests": 1,
+        "status": "pending",
+        "paymentMethod": "Pay At Hotel",
+        "isPaid": false,
+        "createdAt": "2025-04-10T06:41:20.501Z",
+        "updatedAt": "2025-04-10T06:41:20.501Z",
+        "__v": 0
+    }
+]

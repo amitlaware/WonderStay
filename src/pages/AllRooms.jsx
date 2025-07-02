@@ -122,7 +122,7 @@ const AllRooms = ()=>{
             </div>         
             
         </div>
-        <Footer />
+        
         </>
         
     )

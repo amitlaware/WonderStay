@@ -11,7 +11,6 @@ const Home = ()=>{
             <FeaturedDestination />
             <ExclusiveOffers />
             <Testimonial />
-            <Footer />
         </>
     )
 }
