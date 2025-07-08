@@ -1,8 +1,7 @@
-import { Message } from "svix/dist/api/message";
-import User from "../models/User";
+import User from "../models/User.js";
 import { Webhook } from "svix";
 
-const clerkWebhooks = async(req,res)=>{
+const clerkWebHooks = async(req,res)=>{
     try{
         // creating svix instance using clerk webhook secret
 
@@ -21,7 +20,7 @@ const clerkWebhooks = async(req,res)=>{
         const {data,type} = req.body;
 
         const userData = {  
-            _id : data._id,
+            id : data._id,
             email: data.email_addresses[0].email_address,
             username: data.first_name + " "+ data.last_name,
             image:data.image_url,
@@ -45,13 +44,13 @@ const clerkWebhooks = async(req,res)=>{
             default:
                 break;
         }
-        res.json({success:true, Message:"Webhook recieved"});
+        res.json({success:true, message:"Webhook recieved"});
 
     }catch(error){
         console.log(error.message);
-        res.json({success:false,message:error.message});
+        res.json({success:false, message:error.message});
 
     }
 }
 
-export default clerkWebhooks;
+export default clerkWebHooks;
