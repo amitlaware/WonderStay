@@ -1,7 +1,7 @@
 import User from "../models/User.js";
 import { Webhook } from "svix";
 
-const clerkWebHooks = async(req,res)=>{
+const clerkWebHooks = async (req,res)=>{
     try{
         // creating svix instance using clerk webhook secret
 
@@ -17,10 +17,10 @@ const clerkWebHooks = async(req,res)=>{
         // verifyinng headers
         await whook.verify(JSON.stringify(req.body), headers);
 
-        const {data,type} = req.body;
+        const {data, type} = req.body;
 
         const userData = {  
-            id : data._id,
+            _id : data.id,
             email: data.email_addresses[0].email_address,
             username: data.first_name + " "+ data.last_name,
             image:data.image_url,
@@ -28,17 +28,17 @@ const clerkWebHooks = async(req,res)=>{
 
         // Switch case for different events
 
-        switch(type){
+        switch (type){
             case "user.created":{
                 await User.create(userData);
                 break;
             }
             case "user.updated":{
-                await User.findByIdAndUpdate(data._id, userData);
+                await User.findByIdAndUpdate(data.id, userData);
                 break;
             }
             case "user.deleted":{
-                await User.findByIdAndDelete(data._id);
+                await User.findByIdAndDelete(data.id);
                 break;
             }
             default:
